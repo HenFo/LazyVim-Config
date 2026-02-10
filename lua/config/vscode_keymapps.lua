@@ -14,7 +14,7 @@ local mappings = {
   { "n", "gR", "editor.action.referenceSearch.trigger" },
   { "n", "gI", "editor.action.peekImplementation" },
   { "n", "gS", "workbench.action.showAllSymbols" },
-  { "n", "<leader>rf", "editor.action.refactor" },
+  { { "n", "v" }, "<leader>rf", "editor.action.refactor" },
   { "n", "<leader>ff", "workbench.action.quickOpen" },
   { "n", "<leader>fif", "actions.find" },
   { "n", "<leader>fr", "editor.action.startFindReplaceAction" },
@@ -26,6 +26,7 @@ local mappings = {
   { "n", "<leader>rt", "workbench.action.tasks.runTask" },
   { "n", "<leader>ex", "workbench.files.action.showActiveFileInExplorer" },
   { "n", "<leader>bd", "workbench.action.closeActiveEditor" },
+  { { "n", "v" }, "<leader>ai", "inlineChat.start" },
 }
 
 for _, mapping in ipairs(mappings) do

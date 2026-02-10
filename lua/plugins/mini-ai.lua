@@ -5,7 +5,7 @@ return {
     return {
       n_lines = 500,
       custom_textobjects = {
-        a = ai.gen_spec.treesitter({
+        A = ai.gen_spec.treesitter({
           a = "@assignment.outer",
           i = "@assignment.inner",
           l = "@assignment.lhs",
