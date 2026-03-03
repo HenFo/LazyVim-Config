@@ -4,7 +4,7 @@
 
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 15
-vim.opt.wrap = true
+vim.opt.wrap = false
 
 vim.schedule(function()
   vim.opt.clipboard = "unnamedplus"
