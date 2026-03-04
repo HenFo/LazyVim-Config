@@ -1,11 +1,13 @@
--- Treat JSON files as JSONC (comments allowed)
-vim.filetype.add({
-  pattern = {
-    [".*%.json"] = "jsonc",
-  },
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "json",
+  callback = function(args)
+    vim.bo[args.buf].filetype = "jsonc"
+  end,
 })
 
-require("lspconfig").jsonls.setup({
-  filetypes = { "json", "jsonc" },
-  init_options = { provideFormatter = true },
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "jsonc",
+  callback = function()
+    vim.opt_local.commentstring = "// %s"
+  end,
 })
