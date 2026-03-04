@@ -7,6 +7,13 @@ vim.g.ai_cmp = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 15
 vim.opt.wrap = false
+vim.opt.list = true
+vim.opt.listchars = {
+  tab = "» ",
+  trail = "·",
+  lead = "·",
+  nbsp = "␣",
+}
 
 vim.schedule(function()
   vim.opt.clipboard = "unnamedplus"
