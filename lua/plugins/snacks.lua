@@ -8,5 +8,8 @@ return {
       -- disable key mapping
       { "<leader>n", false },
     },
+    bigfile = {
+      enabled = false, -- Disable big file support
+    },
   },
 }
