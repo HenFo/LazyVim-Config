@@ -43,3 +43,16 @@ vim.api.nvim_set_hl(0, "NotifyERRORBorder", { bg = "none" })
 vim.api.nvim_set_hl(0, "NotifyWARNBorder", { bg = "none" })
 vim.api.nvim_set_hl(0, "NotifyTRACEBorder", { bg = "none" })
 vim.api.nvim_set_hl(0, "NotifyDEBUGBorder", { bg = "none" })
+
+local function set_active_tab_color()
+  local active_tab_color = "#fe8019"
+
+  vim.api.nvim_set_hl(0, "TabLineSel", { fg = active_tab_color, bold = true })
+  vim.api.nvim_set_hl(0, "BufferLineBufferSelected", { fg = active_tab_color, bold = true })
+end
+
+set_active_tab_color()
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+  callback = set_active_tab_color,
+})
