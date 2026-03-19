@@ -12,6 +12,13 @@ vim.keymap.set({ "n", "x" }, "<leader>l", "g_", { desc = "Jump to line start" })
 vim.keymap.del("n", "<leader>n")
 
 if not vim.g.vscode then
+  vim.keymap.set("n", "<leader>fi", function()
+    Snacks.picker.files({
+      hidden = true,
+      ignored = true,
+    })
+  end, { desc = "Find Files (include gitignored)" })
+
   vim.keymap.set("n", "<leader>Nq", vim.cmd.cprev, { desc = "Previous Quickfix" })
   vim.keymap.set("n", "<leader>nq", vim.cmd.cnext, { desc = "Next Quickfix" })
 
