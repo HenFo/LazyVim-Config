@@ -19,6 +19,10 @@ if not vim.g.vscode then
     })
   end, { desc = "Find Files (include gitignored)" })
 
+  vim.keymap.set("n", "<leader>f/", function()
+    Snacks.picker.resume()
+  end, { desc = "Resume Last Picker" })
+
   vim.keymap.set("n", "<leader>Nq", vim.cmd.cprev, { desc = "Previous Quickfix" })
   vim.keymap.set("n", "<leader>nq", vim.cmd.cnext, { desc = "Next Quickfix" })
 
