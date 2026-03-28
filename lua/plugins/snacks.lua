@@ -9,7 +9,8 @@ return {
       { "<leader>n", false },
     },
     bigfile = {
-      enabled = false, -- Disable big file support
+      enabled = true, -- Disable big file support
+      size = 4 * 1024 * 1024, -- Set the big file size threshold to 4MB
     },
   },
 }
