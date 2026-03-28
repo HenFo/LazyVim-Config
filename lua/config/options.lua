@@ -3,6 +3,7 @@
 -- Add any additional options here
 
 vim.g.ai_cmp = true
+vim.g.root_spec = { "cwd" }
 
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 15
