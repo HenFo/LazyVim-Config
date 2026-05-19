@@ -4,6 +4,14 @@
 
 require("config.vscode_keymapps")
 
+local function format_with_prettier()
+  require("conform").format({
+    async = true,
+    formatters = { "prettier_manual" },
+    lsp_format = "last",
+  })
+end
+
 vim.keymap.set("n", "<leader>o", "mzo<Esc>`z", { desc = "Insert space below" })
 vim.keymap.set("n", "<leader>O", "mzO<Esc>`z", { desc = "Insert space above" })
 vim.keymap.set({ "n", "x" }, "<leader>h", "^", { desc = "Jump to line end" })
@@ -12,6 +20,7 @@ vim.keymap.set({ "n", "x" }, "<leader>l", "g_", { desc = "Jump to line start" })
 vim.keymap.del("n", "<leader>n")
 
 if not vim.g.vscode then
+  vim.keymap.set("n", "<leader>cP", format_with_prettier, { desc = "Format with Prettier" })
 
   vim.keymap.set("n", "<leader><space>", function()
     Snacks.picker.files({
