@@ -7,6 +7,7 @@ vim.g.root_spec = {
   "cwd",
 }
 
+vim.opt.colorcolumn = "100"
 vim.opt.shiftwidth = 4
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 15
