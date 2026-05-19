@@ -3,7 +3,11 @@
 -- Add any additional options here
 
 vim.g.ai_cmp = true
-vim.g.root_spec = { "cwd" }
+vim.g.root_spec = {
+  "lsp",
+  { "tsconfig.json", "jsconfig.json", "package.json", "pom.xml", ".git" },
+  "cwd",
+}
 vim.g.lazyvim_prettier_needs_config = true
 
 vim.opt.colorcolumn = "100"
