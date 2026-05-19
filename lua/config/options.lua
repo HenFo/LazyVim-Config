@@ -7,6 +7,7 @@ vim.g.root_spec = {
   "cwd",
 }
 
+vim.opt.shiftwidth = 4
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 15
 vim.opt.wrap = false
