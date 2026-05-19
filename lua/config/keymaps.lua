@@ -25,6 +25,7 @@ if not vim.g.vscode then
   vim.keymap.set("n", "<leader><space>", function()
     Snacks.picker.files({
       hidden = true,
+      follow = true,
     })
   end, { desc = "Find Files (Root Dir)" })
 
@@ -32,6 +33,7 @@ if not vim.g.vscode then
     Snacks.picker.files({
       hidden = true,
       ignored = true,
+      follow = true,
     })
   end, { desc = "Find Files (include gitignored)" })
 
