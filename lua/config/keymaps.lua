@@ -12,6 +12,13 @@ vim.keymap.set({ "n", "x" }, "<leader>l", "g_", { desc = "Jump to line start" })
 vim.keymap.del("n", "<leader>n")
 
 if not vim.g.vscode then
+
+  vim.keymap.set("n", "<leader><space>", function()
+    Snacks.picker.files({
+      hidden = true,
+    })
+  end, { desc = "Find Files (Root Dir)" })
+
   vim.keymap.set("n", "<leader>fi", function()
     Snacks.picker.files({
       hidden = true,
