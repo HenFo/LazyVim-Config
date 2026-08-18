@@ -34,7 +34,7 @@ return {
       "<leader>aa",
       function()
         save_current_buffer()
-        return require("opencode").operator("@this: ")
+        return require("opencode").ask("@this: ")
       end,
       mode = "x",
       expr = true,
