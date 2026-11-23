@@ -10,6 +10,20 @@
 
 require("config.json-as-jsonc")
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function(args)
+    vim.diagnostic.enable(false, { bufnr = args.buf })
+  end,
+})
+
+-- This file loads on VeryLazy, after the initial buffer's FileType event.
+for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+  if vim.bo[buf].filetype == "markdown" then
+    vim.diagnostic.enable(false, { bufnr = buf })
+  end
+end
+
 local close_neotree_group = vim.api.nvim_create_augroup("close_neotree_on_file_enter", { clear = true })
 
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
